@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sanguchón 2.0 - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>🍔 El Sanguchón 2.0</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#promociones">Promos</a></li>
+                <li><a href="#menu">Nuestro Menú</a></li>
+                <li><a href="admin.html" class="admin-link">👤 Admin</a></li>
+            </ul>
+        </nav>
+        <button class="cart-btn">🛒 Carrito (0)</button>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>El sabor de siempre, a la velocidad de hoy</h1>
+            <p>Pide tus completos y sándwiches favoritos con la ayuda de nuestro asistente inteligente.</p>
+            <button class="cta-button">Ver Menú Completo</button>
+        </div>
+    </section>
+
+    <!-- Sección de Promociones (Carrusel) -->
+    <section id="promociones" class="carousel-section">
+        <h2 class="section-title">Promociones Destacadas</h2>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                
+                <!-- Promo 1 -->
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Promo Combo Familiar">
+                    <div class="slide-caption">
+                        <h3>Combo Familiar</h3>
+                        <p>4 Completos + Bebida de 1.5L por $12.990</p>
+                    </div>
+                </div>
+
+                <!-- Promo 2 -->
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1594212695843-eb38b9d6287c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Promo Hamburguesas">
+                    <div class="slide-caption">
+                        <h3>Promo XL</h3>
+                        <p>2 Hamburguesas Dobles + Papas Grandes por $10.500</p>
+                    </div>
+                </div>
+
+                <!-- Promo 3 -->
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Promo Bajón">
+                    <div class="slide-caption">
+                        <h3>El Bajón Perfecto</h3>
+                        <p>2 Sándwiches Churrasco + 2 Papas Medianas por $14.000</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Botones de Navegación -->
+            <button class="carousel-btn prev-btn">❮</button>
+            <button class="carousel-btn next-btn">❯</button>
+        </div>
+    </section>
+    
+    <!-- Catálogo de Productos Dinámico (Conectado con Admin) -->
+    <section id="menu" class="catalog">
+        <h2 class="section-title">Nuestros Clásicos</h2>
+        
+        <!-- ESTE DIV DEBE ESTAR VACÍO. El archivo productos.js inyectará los productos aquí -->
+        <div class="grid" id="menu-grid">
+            
+        </div>
+    </section>
+
+    <!-- Asistente Virtual Inteligente (Chatbot Flotante) -->
+    <aside class="chatbot-container">
+        <div class="chatbot-header">
+            <span>🤖 Asistente de Pedidos</span>
+        </div>
+        <div class="chatbot-body">
+            <p class="bot-msg">¡Hola! ¿Qué te gustaría pedir hoy? Te recomiendo nuestro nuevo Completo Italiano.</p>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" placeholder="Escribe tu pedido aquí...">
+            <button>➔</button>
+        </div>
+    </aside>
+
+    <!-- ==========================================
+         MENÚ LATERAL DEL CARRITO
+         ========================================== -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    
+    <aside id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>🛒 Tu Pedido</h2>
+            <button id="close-cart-btn" class="close-btn">✖</button>
+        </div>
+        
+        <div id="cart-items" class="cart-items">
+            <!-- Los productos se inyectarán aquí mágicamente con JS -->
+        </div>
+        
+        <div class="cart-footer">
+            <h3>Total: <span id="cart-total-price">$0</span></h3>
+            <button class="checkout-btn" onclick="pagarPedido()">💳 Pagar Pedido</button>
+        </div>
+   
+    <!-- MUY IMPORTANTE: Los scripts siempre van al final del body -->
+    <script src="js/script.js"></script>
+    <script src="js/productos.js"></script>
+</body>
+</html>
