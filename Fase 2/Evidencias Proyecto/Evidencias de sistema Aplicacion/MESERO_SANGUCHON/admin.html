@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - El Sanguchón 2.0</title>
+    <!-- Asegúrate de que esta ruta coincida con donde tienes tu CSS -->
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body style="background-color: #e9ecef;">
+
+    <!-- Navegación del Admin -->
+    <header class="navbar" style="background-color: #1d3557;">
+        <div class="logo">
+            <h2 style="color: white;">⚙️ Panel de Administración</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: white;">⬅ Volver a la Tienda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: 1fr 2fr; gap: 30px; padding: 0 20px;">
+        
+        <!-- FORMULARIO PARA AÑADIR PRODUCTOS -->
+        <div>
+            <section style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="border-bottom: 2px solid #ffb703; padding-bottom: 10px;">Añadir Nuevo Producto</h3>
+                
+                <form id="addProductForm">
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-weight: bold; display: block; margin-bottom: 5px;">Nombre del Producto</label>
+                        <input type="text" id="prodNombre" placeholder="Ej: Chacarero XL" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-weight: bold; display: block; margin-bottom: 5px;">Descripción</label>
+                        <input type="text" id="prodDesc" placeholder="Ingredientes breves..." required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-weight: bold; display: block; margin-bottom: 5px;">Precio ($)</label>
+                        <input type="number" id="prodPrecio" placeholder="5000" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-weight: bold; display: block; margin-bottom: 5px;">Subir Imagen (Opcional)</label>
+                        <input type="file" id="prodImg" accept="image/*" style="width: 100%;">
+                    </div>
+                    <button type="submit" style="background-color: #e63946; color: white; border: none; padding: 12px; width: 100%; border-radius: 5px; font-weight: bold; cursor: pointer;">➕ Guardar Producto</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- TABLA DE PRODUCTOS -->
+        <div>
+            <section style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="border-bottom: 2px solid #ffb703; padding-bottom: 10px;">Productos en el Menú</h3>
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead style="background-color: #f8f9fa;">
+                        <tr>
+                            <th style="padding: 12px; border-bottom: 1px solid #eee;">Imagen</th>
+                            <th style="padding: 12px; border-bottom: 1px solid #eee;">Producto</th>
+                            <th style="padding: 12px; border-bottom: 1px solid #eee;">Precio</th>
+                            <th style="padding: 12px; border-bottom: 1px solid #eee;">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminProductsBody">
+                        <!-- Aquí se inyectarán los productos mediante JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE PRODUCTOS AL FINAL -->
+    <script src="js/productos.js"></script>
+</body>
+</html>
